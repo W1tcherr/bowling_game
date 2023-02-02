@@ -22,7 +22,7 @@ void manual_input(uint32_t& _number_of_players)
 	{
 		std::cout << "Enter the number of players: ";
 		std::cin >> _number_of_players;
-		if(std::cin.fail() || _number_of_players > 5)
+		if(std::cin.fail() || _number_of_players > 5 || _number_of_players < 1)
 		{
 			std::cin.clear();
 			std::cin.ignore(32767, '\n');
@@ -30,6 +30,8 @@ void manual_input(uint32_t& _number_of_players)
 		}
         else
         {
+            std::cin.clear();
+			std::cin.ignore(32767, '\n');
             return;
         }
     }

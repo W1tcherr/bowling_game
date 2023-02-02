@@ -2,7 +2,7 @@
 
 void Player::set_score(const uint32_t& _frame, const uint32_t& _ball, const uint32_t& _score)
 {
-    for(size_t i = 0; i < 10; ++i)
+    for(size_t i = 0; i < 9; ++i)
     {
         if(bonus[i] > 0)
         {
@@ -19,7 +19,12 @@ void Player::set_score(const uint32_t& _frame, const uint32_t& _ball, const uint
     }
 }
 
-uint32_t Player::get_score()
+uint32_t Player::get_frame_score(const uint32_t& _frame)
+{
+    return score[_frame];
+}
+
+uint32_t Player::get_total_score()
 {
     uint32_t sum = 0;
 
